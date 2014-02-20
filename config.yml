@@ -1,0 +1,6 @@
+pusher:
+  app_id: "66601"
+  app_key: '874b9a392f198e149231'
+  app_secret: '63d4b74f6143771f5a83'
+twilio:
+  account_sid: "AC0d40a9a56fedf29f3a1d76a739b1fdd3"
