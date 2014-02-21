@@ -39,18 +39,6 @@
     el.hide();
     $('#incoming_calls').prepend(el);
     el.slideDown();
-    $('#call').modal('show');
-  }
-  
-  function createCallEl(data) {
-    var li = '' +
-    '<li>' +
-      createDetailHtml(data) +
-      '<div class="actions">' +
-        '<a href="#" class="btn btn-success disabled">Answer</a>' +
-        '<a href="#" class="btn btn-danger disabled">Ignore</a>' +
-      '</div>' +
-    '</li>';
     var modal = '' +
     '<div class="modal fade" id="call">'+
       '<div class="modal-dialog">'+
@@ -71,7 +59,20 @@
         '</div><!-- /.modal-content -->'+
       '</div><!-- /.modal-dialog -->'+
     '</div><!-- /.modal -->';
-    return $(li) + $(modal);
+    $(body).append(modal);
+    $('#call').modal('show');
+  }
+  
+  function createCallEl(data) {
+    var li = '' +
+    '<li>' +
+      createDetailHtml(data) +
+      '<div class="actions">' +
+        '<a href="#" class="btn btn-success disabled">Answer</a>' +
+        '<a href="#" class="btn btn-danger disabled">Ignore</a>' +
+      '</div>' +
+    '</li>';
+    return $(li);
   }
     
   // Common
