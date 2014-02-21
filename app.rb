@@ -4,8 +4,7 @@ require 'yaml'
 
 require 'pusher'
 
-require 'nokogiri'
-require 'open-uri'
+require 'builder'
 
 class App < Sinatra::Base
 
@@ -23,9 +22,14 @@ class App < Sinatra::Base
   end
 
   get '/call' do
-    f = File.open("http://myzaprealtime.herokuapp.com/call/index.html")
-    doc = Nokogiri::XML(f)
-    f.close
+    builder do |xml|
+      xml.instruct! :xml, :version => '1.0'
+      xml.rss :version => "2.0" do
+        xml.response do
+          xml.say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
+        end
+      end
+    end
   end
 
   post '/call' do
