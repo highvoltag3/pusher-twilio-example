@@ -59,7 +59,7 @@
         '</div><!-- /.modal-content -->'+
       '</div><!-- /.modal-dialog -->'+
     '</div><!-- /.modal -->';
-    $(body).append(modal);
+    $('body').append(modal);
     $('#call').modal('show');
   }
   
