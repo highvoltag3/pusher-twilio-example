@@ -39,19 +39,20 @@
     el.hide();
     $('#incoming_calls').prepend(el);
     el.slideDown();
+    $('#call').modal('show');
   }
   
   function createCallEl(data) {
-    // var li = '' +
-    // '<li>' +
-    //   createDetailHtml(data) +
-    //   '<div class="actions">' +
-    //     '<a href="#" class="btn btn-success disabled">Answer</a>' +
-    //     '<a href="#" class="btn btn-danger disabled">Ignore</a>' +
-    //   '</div>' +
-    // '</li>';
+    var li = '' +
+    '<li>' +
+      createDetailHtml(data) +
+      '<div class="actions">' +
+        '<a href="#" class="btn btn-success disabled">Answer</a>' +
+        '<a href="#" class="btn btn-danger disabled">Ignore</a>' +
+      '</div>' +
+    '</li>';
     var modal = '' +
-    '<div class="modal fade in">'+
+    '<div class="modal fade" id="call">'+
       '<div class="modal-dialog">'+
         '<div class="modal-content">'+
           '<div class="modal-header">'+
@@ -70,7 +71,7 @@
         '</div><!-- /.modal-content -->'+
       '</div><!-- /.modal-dialog -->'+
     '</div><!-- /.modal -->';
-    return $(modal);
+    return $(li) + $(modal);
   }
     
   // Common
