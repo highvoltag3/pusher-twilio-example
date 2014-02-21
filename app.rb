@@ -34,6 +34,7 @@ class App < Sinatra::Base
       xml.instruct! :xml, :version => '1.0'
         xml.Response("voice" => "woman") do
           xml.Say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
+          xml.Sms("Someone just called the demo", "from" => "+15103986927" "from" => "+14086376002")
         end
       end
     
