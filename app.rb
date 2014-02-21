@@ -21,7 +21,7 @@ class App < Sinatra::Base
     erb :index
   end
 
-  get '/call' do
+  get '/call/*' do
     builder do |xml|
       xml.instruct! :xml, :version => '1.0'
         xml.response do
