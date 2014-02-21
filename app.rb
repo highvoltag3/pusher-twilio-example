@@ -23,7 +23,7 @@ class App < Sinatra::Base
   end
 
   get '/call' do
-    f = File.open("index.html")
+    f = File.open("http://myzaprealtime.herokuapp.com/call/index.html")
     doc = Nokogiri::XML(f)
     f.close
   end
