@@ -1,6 +1,6 @@
 pusher:
-  app_id: "66601"
-  app_key: '874b9a392f198e149231'
-  app_secret: '63d4b74f6143771f5a83'
+  app_id: "66604"
+  app_key: 'b62804332136b56c0702'
+  app_secret: '9ebaf77cd69cb32390ca'
 twilio:
   account_sid: "AC0d40a9a56fedf29f3a1d76a739b1fdd3"
