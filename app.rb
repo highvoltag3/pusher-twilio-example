@@ -24,17 +24,17 @@ class App < Sinatra::Base
   get '/call' do
     builder do |xml|
       xml.instruct! :xml, :version => '1.0'
-        xml.response do
-          xml.say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
+        xml.Response("voice" => "woman") do
+          xml.Say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
       end
     end
   end
-  
+
   get '/call/*' do
     builder do |xml|
       xml.instruct! :xml, :version => '1.0'
-        xml.response do
-          xml.say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
+        xml.Response("voice" => "woman") do
+          xml.Say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
       end
     end
   end
