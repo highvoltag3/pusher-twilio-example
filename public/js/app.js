@@ -72,9 +72,6 @@
     '</div><!-- /.modal -->';
     return $(modal);
   }
-
-  //dismiss modal
-  $('.dismiss').modal('hide')
     
   // Common
   function createDetailHtml(data) {
