@@ -96,6 +96,7 @@
 
 Pusher.log = function(msg) {
   if( window.console && window.console.log ) {
+    window.console.log('If you\'re inspecting this, please don\'t call my numbers which get printed here :p ');
     window.console.log(msg);
   }
 };
