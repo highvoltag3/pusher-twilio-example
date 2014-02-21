@@ -4,6 +4,9 @@ require 'yaml'
 
 require 'pusher'
 
+require 'nokogiri'
+require 'open-uri'
+
 class App < Sinatra::Base
 
   set :public_folder, Proc.new { File.join(root, "public") }
@@ -18,7 +21,13 @@ class App < Sinatra::Base
     @app_key = config['pusher']['app_key']
     erb :index
   end
-  
+
+  get '/call' do
+    f = File.open("index.html")
+    doc = Nokogiri::XML(f)
+    f.close
+  end
+
   post '/call' do
     if( params['AccountSid'] != config['twilio']['account_sid'] )
       status 401
