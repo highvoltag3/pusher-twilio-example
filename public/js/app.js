@@ -51,7 +51,7 @@
     //   '</div>' +
     // '</li>';
     var modal = '' +
-    '<div class="modal fade">'+
+    '<div class="modal fade in">'+
       '<div class="modal-dialog">'+
         '<div class="modal-content">'+
           '<div class="modal-header">'+
@@ -64,7 +64,7 @@
           '<div class="modal-footer">'+
             '<div class="actions">' +
               '<a href="#" class="btn btn-success disabled">Answer</a>' +
-              '<a href="#" class="btn btn-danger disabled" data-dismiss="modal">Ignore</a>' +
+              '<a href="#" class="btn btn-danger dismiss" data-dismiss="modal">Ignore</a>' +
             '</div>' +
           '</div>'+
         '</div><!-- /.modal-content -->'+
@@ -72,6 +72,9 @@
     '</div><!-- /.modal -->';
     return $(modal);
   }
+
+  //dismiss modal
+  $('.dismiss').modal('hide')
     
   // Common
   function createDetailHtml(data) {
