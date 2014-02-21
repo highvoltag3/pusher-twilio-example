@@ -21,24 +21,6 @@ class App < Sinatra::Base
     erb :index
   end
 
-  get '/call' do
-    builder do |xml|
-      xml.instruct! :xml, :version => '1.0'
-        xml.Response("voice" => "woman") do
-          xml.Say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
-      end
-    end
-  end
-
-  get '/call/*' do
-    builder do |xml|
-      xml.instruct! :xml, :version => '1.0'
-        xml.Response("voice" => "woman") do
-          xml.Say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
-      end
-    end
-  end
-
   post '/call' do
     if( params['AccountSid'] != config['twilio']['account_sid'] )
       status 401
@@ -47,6 +29,14 @@ class App < Sinatra::Base
         :from_number =>  '...' + params['From'][-4, 4],
         :timestamp => Time.now.strftime("%Y-%m-%dT%H:%M:%S")  
       })
+      
+      builder do |xml|
+      xml.instruct! :xml, :version => '1.0'
+        xml.Response("voice" => "woman") do
+          xml.Say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
+        end
+      end
+    
     end
   end
   
