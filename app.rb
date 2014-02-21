@@ -24,10 +24,8 @@ class App < Sinatra::Base
   get '/call' do
     builder do |xml|
       xml.instruct! :xml, :version => '1.0'
-      xml.rss :version => "2.0" do
         xml.response do
           xml.say "Thanks for Trying my demo. Any questions email darionovoa@ideartte.com"
-        end
       end
     end
   end
